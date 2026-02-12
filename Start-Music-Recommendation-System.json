@@ -1,0 +1,167 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": -23,
+        "y": -24
+      },
+      "caption": "",
+      "labels": [
+        "User"
+      ],
+      "properties": {
+        "name": "João"
+      },
+      "style": {
+        "node-color": "#0062b1"
+      }
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 422.7172065106683,
+        "y": -71.67241361142575
+      },
+      "caption": "",
+      "labels": [
+        "Track"
+      ],
+      "properties": {
+        "title": "Bohemian Rhapsody"
+      },
+      "style": {
+        "node-color": "#68bc00"
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 238.20439244480434,
+        "y": -334.10710636902104
+      },
+      "caption": "",
+      "labels": [
+        "Artist"
+      ],
+      "properties": {
+        "name": "Queen"
+      },
+      "style": {
+        "node-color": "#d33115"
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 102,
+        "y": 241.5
+      },
+      "caption": "",
+      "labels": [
+        "Genre"
+      ],
+      "properties": {
+        "name": "Rock"
+      },
+      "style": {
+        "node-color": "#fcdc00"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "LISTENED",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "fromId": "n0",
+      "toId": "n2",
+      "type": "FOLLOWS",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "fromId": "n0",
+      "toId": "n3",
+      "type": "LIKES",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "fromId": "n1",
+      "toId": "n3",
+      "type": "BELONGS_TO",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n5",
+      "fromId": "n1",
+      "toId": "n2",
+      "type": "PERFORMED_BY",
+      "properties": {},
+      "style": {}
+    }
+  ],
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  }
+}

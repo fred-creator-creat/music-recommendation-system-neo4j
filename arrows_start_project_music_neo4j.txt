@@ -1,0 +1,2 @@
+MERGE (n1:Track {title: "Bohemian Rhapsody"})-[:PERFORMED_BY]->(:Artist {name: "Queen"})<-[:FOLLOWS]-(n0:User {name: "João"})-[:LISTENED]->(n1)-[:BELONGS_TO]->(n3:Genre {name: "Rock"})
+MERGE (n0)-[:LIKES]->(n3)

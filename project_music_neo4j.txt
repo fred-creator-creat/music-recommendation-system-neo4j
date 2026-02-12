@@ -1,0 +1,84 @@
+// Criando a estrutura base do Arrows
+MERGE (n1:Track {title: "Bohemian Rhapsody"})
+MERGE (a:Artist {name: "Queen"})
+MERGE (u:User {name: "João"})
+MERGE (g:Genre {name: "Rock"})
+
+MERGE (n1)-[:PERFORMED_BY]->(a)
+MERGE (u)-[:FOLLOWS]->(a)
+MERGE (u)-[:LISTENED]->(n1)
+MERGE (n1)-[:BELONGS_TO]->(g)
+MERGE (u)-[:LIKES]->(g);
+
+// Criando Gêneros
+MERGE (rock:Genre {name: "Rock"})
+MERGE (pop:Genre {name: "Pop"})
+MERGE (jazz:Genre {name: "Jazz"})
+
+// Criando Artistas
+MERGE (queen:Artist {name: "Queen"})
+MERGE (beatles:Artist {name: "The Beatles"})
+MERGE (madonna:Artist {name: "Madonna"})
+
+// Criando Músicas e conectando aos Artistas e Gêneros
+MERGE (bohemian:Track {title: "Bohemian Rhapsody"})
+MERGE (bohemian)-[:PERFORMED_BY]->(queen)
+MERGE (bohemian)-[:BELONGS_TO]->(rock)
+
+MERGE (imagine:Track {title: "Imagine"})
+MERGE (imagine)-[:PERFORMED_BY]->(beatles)
+MERGE (imagine)-[:BELONGS_TO]->(rock)
+
+MERGE (vogue:Track {title: "Vogue"})
+MERGE (vogue)-[:PERFORMED_BY]->(madonna)
+MERGE (vogue)-[:BELONGS_TO]->(pop)
+
+// Criando Usuários e seus comportamentos
+MERGE (joao:User {name: "João"})
+MERGE (joao)-[:FOLLOWS]->(queen)
+MERGE (joao)-[:LISTENED]->(bohemian)
+MERGE (joao)-[:LIKES]->(rock)
+
+// Maria (Nova usuária para gerar conexões)
+MERGE (maria:User {name: "Maria"})
+MERGE (maria)-[:FOLLOWS]->(queen)
+MERGE (maria)-[:LISTENED]->(imagine)
+MERGE (maria)-[:LIKES]->(rock)
+
+// Carlos (Gosta de Pop)
+MERGE (carlos:User {name: "Carlos"})
+MERGE (carlos)-[:LISTENED]->(vogue)
+MERGE (carlos)-[:LIKES]->(pop);
+
+MATCH (n) RETURN n;
+
+MATCH (n)-[r]->(m) RETURN n, r, m;
+
+MATCH (n)-[r]->(m) RETURN n, r, m;
+
+MATCH (u:User {name: "João"})-[:LIKES]->(g:Genre)
+MATCH (m:Track)-[:BELONGS_TO]->(g)
+WHERE NOT (u)-[:LISTENED]->(m)
+RETURN m.title AS Recomendacao, g.name AS Genero;
+
+MATCH (u:User {name: "João"})-[:LISTENED]->(m1:Track)<-[:LISTENED]-(outro:User)
+MATCH (outro)-[:LISTENED]->(musica_recomendada:Track)
+WHERE u <> outro 
+  AND NOT (u)-[:LISTENED]->(musica_recomendada)
+RETURN DISTINCT musica_recomendada.title AS Sugestao, outro.name AS Ouvido_Por;
+
+MATCH (maria:User {name: "Maria"}), (bohemian:Track {title: "Bohemian Rhapsody"})
+MERGE (maria)-[:LISTENED]->(bohemian);
+
+MATCH (u:User {name: "João"})-[:LISTENED]->(m1:Track)<-[:LISTENED]-(outro:User)
+MATCH (outro)-[:LISTENED]->(musica_recomendada:Track)
+WHERE u <> outro 
+  AND NOT (u)-[:LISTENED]->(musica_recomendada)
+RETURN DISTINCT musica_recomendada.title AS Sugestao, outro.name AS Ouvido_Por;
+
+MATCH (a:Artist)<-[r:FOLLOWS]-(u:User)
+RETURN a.name AS Artista, COUNT(u) AS Seguidores
+ORDER BY Seguidores DESC;
+
+MATCH path = shortestPath((u:User {name: "João"})-[*]-(t:Track {title: "Imagine"}))
+RETURN path;
