@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como parte de um desafio prático de banco de dados NoSQL (Grafos). O objetivo é simular um sistema de recomendação de músicas e artistas utilizando o Neo4j e a linguagem de consulta Cypher.
 
-**Idealizadora do Projeto:** [Seu Nome Aqui]
+**Idealizador do Projeto:** [Fred Cavalheiro]
 
 ## 📌 Visão Geral do Projeto
 O sistema permite conectar usuários a músicas, artistas e gêneros musicais, permitindo realizar recomendações baseadas no comportamento de outros usuários com gostos similares (Filtragem Colaborativa).
