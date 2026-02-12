@@ -2,18 +2,18 @@
 
 Este projeto foi desenvolvido como parte de um desafio prático de banco de dados NoSQL (Grafos). O objetivo é simular um sistema de recomendação de músicas e artistas utilizando o Neo4j e a linguagem de consulta Cypher.
 
+**Idealizadora do Projeto:** [Seu Nome Aqui]
+
 ## 📌 Visão Geral do Projeto
 O sistema permite conectar usuários a músicas, artistas e gêneros musicais, permitindo realizar recomendações baseadas no comportamento de outros usuários com gostos similares (Filtragem Colaborativa).
 
 ## 🚀 Tecnologias Utilizadas
-* **Arrows.app**: Para a modelagem visual do grafo.
-* **Neo4j AuraDB**: Instância na nuvem para execução do banco de dados.
+* **[Arrows.app](https://arrows.app/)**: Ferramenta utilizada para a modelagem visual do grafo.
+* **[Neo4j AuraDB](https://neo4j.com/cloud/platform/aura-graph-database/)**: Plataforma de banco de dados em nuvem utilizada para hospedar o grafo.
 * **Cypher**: Linguagem de consulta para grafos.
 
 ## 📐 Modelagem de Dados (Arrows)
-Abaixo, a estrutura lógica definida no início do projeto:
-
-![Modelo Lógico](Start%20imange%20music%20recomendation%20sistem.png)
+A estrutura lógica foi definida no início do projeto através de um diagrama que mapeia as entidades e suas conexões. Os arquivos correspondentes (Imagem PNG e JSON) estão disponíveis na lista de arquivos deste repositório.
 
 ### Entidades e Relacionamentos:
 * **User**: (Usuário)
@@ -23,14 +23,12 @@ Abaixo, a estrutura lógica definida no início do projeto:
 * **Relacionamentos**: `LISTENED`, `FOLLOWS`, `PERFORMED_BY`, `BELONGS_TO`, `LIKES`.
 
 ## 💻 Implementação e Gráfico Final
-Após a execução dos scripts Cypher, o grafo resultante no Neo4j Aura apresenta as conexões entre João, Maria, Carlos e os elementos musicais:
-
-![Grafo Final](grafico_final.png)
+O banco de dados foi populado via comandos Cypher, criando as conexões entre João, Maria, Carlos e os elementos musicais. O resultado visual deste grafo pode ser conferido no arquivo de imagem enviado a este repositório (gráfico final).
 
 ## 🔍 Consultas de Recomendação (Exemplos)
-No arquivo `project_music_neo4j` (dentro deste repositório), você encontrará as queries utilizadas para:
+No arquivo de script (disponível neste repositório), encontram-se as queries para:
 1. **Recomendação por Gênero**: Sugere músicas de gêneros que o usuário já demonstrou interesse.
-2. **Recomendação Colaborativa**: Sugere músicas que usuários com histórico similar ouviram, mas que o usuário atual ainda não conhece.
+2. **Recomendação Colaborativa**: Sugere músicas baseadas no histórico de usuários com perfis similares.
 
 ---
-*Projeto realizado para fins educacionais - DIO.*
+*Projeto realizado para fins educacionais - [DIO (Digital Innovation One)](https://www.dio.me/)*
