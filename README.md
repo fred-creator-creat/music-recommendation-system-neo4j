@@ -23,7 +23,7 @@ A estrutura lógica foi definida no início do projeto através de um diagrama q
 * **Relacionamentos**: `LISTENED`, `FOLLOWS`, `PERFORMED_BY`, `BELONGS_TO`, `LIKES`.
 
 ## 💻 Implementação e Gráfico Final
-O banco de dados foi populado via comandos Cypher, criando as conexões entre João, Maria, Carlos e os elementos musicais. O resultado visual deste grafo pode ser conferido no arquivo de imagem enviado a este repositório (grafo_final.png).
+O banco de dados foi populado via comandos Cypher, criando as conexões entre João, Maria, Carlos e os elementos musicais. O resultado visual deste grafo pode ser conferido no arquivo de imagem enviado a este repositório [(grafo_final.png)](grafo_final.png.png).
 
 ## 🔍 Consultas de Recomendação (Exemplos)
 No arquivo de script (disponível neste repositório), encontram-se as queries para:
