@@ -28,7 +28,7 @@ Após a execução dos scripts Cypher, o grafo resultante no Neo4j Aura apresent
 ![Grafo Final](grafico_final.png)
 
 ## 🔍 Consultas de Recomendação (Exemplos)
-No arquivo `Project music New forgei` (dentro deste repositório), você encontrará as queries utilizadas para:
+No arquivo `project_music_neo4j` (dentro deste repositório), você encontrará as queries utilizadas para:
 1. **Recomendação por Gênero**: Sugere músicas de gêneros que o usuário já demonstrou interesse.
 2. **Recomendação Colaborativa**: Sugere músicas que usuários com histórico similar ouviram, mas que o usuário atual ainda não conhece.
 
